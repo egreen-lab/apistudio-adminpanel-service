@@ -3,6 +3,7 @@ package io.egreen.wimukthi.microsys.haddle.data.dao.impl;
 import com.mongodb.WriteResult;
 import io.egreen.apistudio.datalayer.mongodb.dao.impl.AbstractDAOController;
 import io.egreen.wimukthi.microsys.account.data.dto.AccountModel;
+import io.egreen.wimukthi.microsys.application.data.dto.ApplicationModel;
 import io.egreen.wimukthi.microsys.haddle.data.dao.HaddleDAO;
 import io.egreen.wimukthi.microsys.haddle.data.dto.HaddleModel;
 import org.mongodb.morphia.query.Query;
@@ -30,6 +31,13 @@ public class HaddleDAOImpl extends AbstractDAOController<HaddleModel> implements
     @Override
     public List<HaddleModel> allHadelDetail() {
         Query<HaddleModel> query = getQuery();
+        return query.asList();
+    }
+
+    @Override
+    public List<HaddleModel> getAccountIdByapp(String appId) {
+        Query<HaddleModel> query = getQuery();
+        query.filter("appId",appId);
         return query.asList();
     }
 }

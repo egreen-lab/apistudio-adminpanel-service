@@ -76,4 +76,13 @@ public class AccountDAOImpl extends AbstractDAOController<AccountModel> implemen
         getDatastore().update(query, updateOperations);
         return true;
     }
+
+    @Override
+    public List<AccountModel> getAppUsers(String accId) {
+        Query<AccountModel> query = getQuery();
+        query.filter("accId",accId);
+        return query.asList();
+    }
+
+
 }

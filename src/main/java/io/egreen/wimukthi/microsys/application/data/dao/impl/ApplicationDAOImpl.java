@@ -18,7 +18,7 @@ import java.util.List;
  */
 public class ApplicationDAOImpl extends AbstractDAOController<ApplicationModel> implements ApplicationDAO {
 
-    private static final Logger LOGGER= LogManager.getLogger(ApplicationDAOImpl.class);
+    private static final Logger LOGGER = LogManager.getLogger(ApplicationDAOImpl.class);
 
     public ApplicationDAOImpl() {
         super(ApplicationModel.class);
@@ -80,6 +80,7 @@ public class ApplicationDAOImpl extends AbstractDAOController<ApplicationModel> 
         LOGGER.info(update.getNewId());
         return true;
     }
+
 
     @Override
     public List<ApplicationModel> viewApplicationDetailbyUserType() {

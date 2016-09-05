@@ -25,4 +25,7 @@ public interface AccountDAO extends DAOController<AccountModel> {
     WriteResult deleteAccCust(String accId);
 
     boolean updateAcc(AccountModel accountModel,String username, String password);
+
+
+    List<AccountModel> getAppUsers(String accId);
 }

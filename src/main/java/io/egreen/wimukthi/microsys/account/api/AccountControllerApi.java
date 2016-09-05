@@ -97,6 +97,16 @@ public class AccountControllerApi {
         return accountServer.updateAcc(accountModel,username,password);
     }
 
+    @GET
+    @Path("/getappusers")
+    @ApiOperation(
+            value = "get App Users : admins",
+            notes = "View admins are working with the App"
+    )
+    public Object getAppUsers(@QueryParam("appId")String appId){
+        return accountServer.getAppUsers(appId);
+    }
+
 
 
 }

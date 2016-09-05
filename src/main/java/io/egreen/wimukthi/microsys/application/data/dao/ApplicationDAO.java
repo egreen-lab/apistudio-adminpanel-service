@@ -25,4 +25,5 @@ public interface ApplicationDAO extends DAOController<ApplicationModel> {
     boolean updateApp(String accId, ApplicationModel applicationModel);
 
     boolean updateApp(ApplicationModel applicationModel);
+
 }
